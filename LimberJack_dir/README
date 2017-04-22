@@ -1,0 +1,6 @@
+LimberJack - a Limber Cl code
+
+ - Modify Makefile
+ - make clean ; make
+ - Read and modify param_limberjack.ini
+ - ./LimberJack param_limberjack.ini

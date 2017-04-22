@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{fullpage}
+
+%opening
+\title{Expressions for the Limber approximation}
+\author{David Alonso}
+
+\begin{document}
+
+\maketitle
+
+\section{Full-sky expressions}
+The angular power spectrum between two contributions is:
+\begin{equation}
+ C^{ij}_\ell=4\pi\int_0^\infty \frac{dk}{k}\,\mathcal{P}_\Phi(k)\Delta^i_\ell(k)\Delta^j_\ell(k).
+\end{equation}
+The expressions for density, RSD, magnification, lensing convergence and CMB lensing are:
+\begin{align}
+  &\Delta_\ell^D(k)=\int dz p_z(z) b(z) T_\delta(k,z) j_\ell(k\chi(z))\\
+  &\Delta_\ell^{RSD}(k)=\int dz \frac{(1+z) p_z(z)}{H(z)}T_\theta(k,z) j_\ell''(k\chi(z))\\
+  &\Delta_\ell^M(k)=\ell(\ell+1)\int \frac{dz}{H(z)}\frac{W^M(z)}{\chi(z)} T_{\phi+\psi}(k,z) j_\ell(k\chi(z)), \\ 
+  &\Delta_\ell^L(k)=-\frac{1}{2}\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}\int \frac{dz}{H(z)} \frac{W^L(z)}{\chi(z)} T_{\phi+\psi}(k,z) j_\ell(k\chi(z)),  \\
+  &\Delta_\ell^{IA}(k)=\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}\int dz\,p_z(z)\,b_{\rm IA}(z)\,T_\delta(k,z)\,\frac{j_\ell(k\chi(z))}{(k\chi(z))^2},  \\
+  &\Delta_\ell^C(k)=-\frac{\ell(\ell+1)}{2}\int_0^{\chi_*}d\chi
+  \frac{\chi_*-\chi}{\chi\chi_*} T_{\phi+\psi}(k,z) j_\ell(k\chi),\\
+  &\Delta_\ell^{ISW}(k)=2\int_0^{\chi_*}d\chi\,a(\chi)\,T_{\dot{\phi}}
+\end{align}
+where
+\begin{align}
+ &W^M(z)\equiv\int_z^\infty dz' p_z(z')\frac{2-5s(z')}{2}\frac{\chi(z')-\chi(z)}{\chi(z')}\\
+ &W^L(z)\equiv\int_z^\infty dz' p_z(z')\frac{\chi(z')-\chi(z)}{\chi(z')}
+\end{align}
+
+Writing $\mathcal{P}_\Phi(k)=k^3P(k)/(2\pi^2T_\delta^2(k,z=0))$ we can rewrite:
+\begin{equation}
+  C_\ell^{ij}=\frac{2}{\pi}\int_0^\infty dk\,k^2\,P_k\tilde{\Delta}^i_\ell(k)\tilde{\Delta}^j_\ell(k)
+\end{equation}
+where $P_k$ is the matter power spectrum at $z=0$ and:
+\begin{align}
+  &\tilde{\Delta}_\ell^D(k)=\int d\chi H(\chi)\,p_z(\chi)\,b(\chi)\,D(\chi)\,j_\ell(k\chi)\\
+  &\tilde{\Delta}_\ell^{RSD}(k)=\int d\chi H(\chi)\,p_z(\chi)\,f(\chi)\,D(\chi) \frac{\left[(k\chi)^2-\ell(\ell-1)\right]j_\ell(k\chi)-2(k\chi)\,j_{\ell+1}(k\chi)}{(k\chi)^2}\\
+  &\tilde{\Delta}_\ell^M(k)=-\frac{3H_0^2\Omega_M\ell(\ell+1)}{k^2}\int d\chi\,W^M(\chi)\,\frac{D(\chi)}{\chi\,a(\chi)}j_\ell(k\chi), \\ 
+  &\tilde{\Delta}_\ell^L(k)=\frac{3H_0^2\Omega_M}{2k^2}\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}\int d\chi\,W^L(\chi)\frac{D(\chi)}{\chi\,a(\chi)}j_\ell(k\chi),  \\
+  &\tilde{\Delta}_\ell^{IA}(k)=\sqrt{\frac{(\ell+2)!}{(\ell-2)!}}
+                       \int d\chi\,H(\chi)\,p_z(\chi)\,b_{\rm IA}(\chi)\,D(\chi)\,\frac{j_\ell(k\chi)}{(k\chi)^2},  \\
+  &\tilde{\Delta}_\ell^C(k)=\frac{3H_0^2\Omega_M\ell(\ell+1)}{2k^2}\int d\chi\,\Theta(\chi;0,\chi_*)
+  \frac{\chi_*-\chi}{\chi\chi_*} \frac{D(\chi)}{a(\chi)} j_\ell(k\chi),  \\
+  &\tilde{\Delta}_\ell^{ISW}(k)=\frac{3H_0^2\Omega_M}{k^2}\int d\chi\,\Theta(\chi;0,\chi_*)H(\chi)D(\chi)[1-f(\chi)]j_\ell(k\chi)
+\end{align}
+where $\Theta(\chi;\chi_1,\chi_2)$ is 1 if $\chi_1<\chi<\chi_2$ and 0 otherwise.
+
+\section{Limber approximation}
+The Limber approximation is
+\begin{equation}
+ j_\ell(x)\simeq\sqrt{\frac{\pi}{2\ell+1}}\,\delta\left(\ell+\frac{1}{2}-x\right).
+\end{equation}
+Thus for each $k$ and $\ell$ we can define a radial distance $\chi_\ell\equiv(\ell+1/2)/k$.
+
+The expressions above can be rewritten as:
+\begin{align}
+ &\tilde{\Delta}_\ell^D(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\,p_z(\chi_\ell)\,b(\chi_\ell)\,D(\chi_\ell)\,H(\chi_\ell)\\
+ &\tilde{\Delta}_\ell^{RSD}(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\,\left[
+ \frac{1+8\ell}{(2\ell+1)^2}\,p_z(\chi_\ell)\,f(\chi_\ell)\,D(\chi_\ell)\,H(\chi_\ell)-\right.\\
+ &\hspace{3.8cm}\left.\frac{4}{2\ell+3}\sqrt{\frac{2\ell+1}{2\ell+3}}p_z(\chi_{\ell+1})\,f(\chi_{\ell+1})\,D(\chi_{\ell+1})\,H(\chi_{\ell+1})\right]\\
+ &\tilde{\Delta}_\ell^M(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\left(-\frac{3\Omega_{M,0}H_0^2\ell(\ell+1)}{k^2}\,
+ \frac{D(\chi_\ell)}{a(\chi_\ell)\chi_\ell}W^M(\chi_\ell)\right)\\
+ &\tilde{\Delta}_\ell^L(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\,\frac{3\Omega_{M,0}H_0^2}{2k^2}\sqrt{\frac{(\ell+2)!}{(\ell-2)}}\,
+ \frac{D(\chi_\ell)}{a(\chi_\ell)\chi_\ell}W^L(\chi_\ell)\\
+ &\tilde{\Delta}_\ell^{IA}(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\,\frac{\sqrt{(\ell+2)(\ell+1)\ell(\ell-1)}}{(\ell+1/2)^2}\,p_z(\chi_\ell)\,b_{\rm IA}(\chi_\ell)\,D(\chi_\ell)\,H(\chi_\ell)\\
+ &\tilde{\Delta}_\ell^C(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\,\frac{3\Omega_{M,0}H_0^2\ell(\ell+1)}{2k^2}\,
+ \frac{D(\chi_\ell)}{a(\chi_\ell)\chi_\ell}\frac{\chi_*-\chi_\ell}{\chi_*}\Theta(\chi_\ell;0,\chi_*)\\
+ &\tilde{\Delta}^{ISW}_\ell(k)=\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\,
+ \frac{3\Omega_{M,0}H_0^2}{k^2}H(\chi_\ell)D(\chi_\ell)\left[1-f(\chi_\ell)\right]
+\end{align}
+
+In the limit $\ell\gg1/2$ these simplify to
+\begin{equation}
+  \tilde{\Delta}^i\equiv\frac{1}{k}\sqrt{\frac{\pi}{2\ell+1}}\lambda^i
+\end{equation}
+where
+\begin{align}
+  &\lambda_\ell^D(k)=p_z(\chi_\ell)b(\chi_\ell)D(\chi_\ell)H(\chi_\ell)\\
+  &\lambda_\ell^{RSD}(k)=0\\
+  &\lambda_\ell^M(k)=-3\Omega_{M,0}H_0^2\frac{\chi_\ell D(\chi_\ell)}{a(\chi_\ell)}W^M(\chi_\ell)\\
+  &\lambda_\ell^L(k)=\frac{3}{2}\Omega_{M,0}H_0^2\frac{\chi_\ell D(\chi_\ell)}{a(\chi_\ell)}W^L(\chi_\ell)\\
+  &\lambda_\ell^{IA}(k)=p_z(\chi_\ell)b_{IA}(\chi_\ell)D(\chi_\ell)H(\chi_\ell)\\
+  &\lambda_\ell^C(k)=\frac{3}{2}\Omega_{M,0}H_0^2\frac{\chi_\ell D(\chi_\ell)}{a(\chi_\ell)}\frac{\chi_*-\chi_\ell}{\chi_*}\Theta(\chi_\ell;0,\chi_*)\\
+  &\lambda_\ell^{ISW}=\frac{3\Omega_{M,0}H_0^2}{k^2}H(\chi_\ell)D(\chi_\ell)[1-f(\chi_\ell)]
+\end{align}  
+
+
+
+\end{document}
